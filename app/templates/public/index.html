@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- <link rel="stylesheet" href="../../static/css/style.css"> -->
-    <title>index</title>
-</head>
-<body>
+{% extends "public/templates/public_templates.html" %}
 
-    <h1 style='color: red'>Index</h1>
-    <p>This is the index.</p>
-    
-    <!-- <hr> -->
+{% block title %}index{% endblock %}
 
-    <img src="{{ url_for('static', filename='img/flask.png') }}" alt="">
+{% block main %}
 
-    <!-- <hr> -->
-
-    <!-- <script src="../../static/js/app.js"></script> -->
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-</body>
-
-</html>
+<div class="container">
+    <div class="col">
+        <h1>home</h1>
+    </div>
+</div>
+{% endblock %}

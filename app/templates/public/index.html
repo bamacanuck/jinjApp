@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="../../static/css/style.css"> -->
     <title>index</title>
 </head>
 <body>
@@ -10,5 +12,14 @@
     <h1 style='color: red'>Index</h1>
     <p>This is the index.</p>
     
+    <!-- <hr> -->
+
+    <img src="{{ url_for('static', filename='img/flask.png') }}" alt="">
+
+    <!-- <hr> -->
+
+    <script src="../../static/js/app.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
 </body>
+
 </html>

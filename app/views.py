@@ -8,7 +8,10 @@ def index():
 
 @app.route("/jinja")
 def jinja():
-    return render_template("public/jinja.html")
+
+    my_name = "SRS"
+
+    return render_template("public/jinja.html", my_name=my_name)
 
 @app.route("/x")
 def redX():

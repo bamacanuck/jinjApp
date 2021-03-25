@@ -8,7 +8,7 @@ def index():
 
 @app.route("/jinja")
 def jinja():
-    return render_template("/jinja.html")
+    return render_template("public/jinja.html")
 
 @app.route("/x")
 def redX():

@@ -47,6 +47,30 @@ def jinja():
     def repeat(x, qty):
         return x * qty
 
+        # family = {
+    #     "Shawn": {
+    #         age: 46,
+    #         loc: "Idaho",
+    #         kids:{
+    #             "Saoirse", "Fianna"
+    #         }
+    #     },
+    #     "Shannon": {
+    #         age: 43,
+    #         loc: "Japan",
+    #         kids:{
+    #             "Roland", "Reilly"
+    #         }            
+    #     },
+    #     "Shane": {
+    #         age: 42,
+    #         loc: "Georgia",
+    #         kids:{
+    #             "Lil"
+    #         }
+    #     }
+    # }
+
     
     return render_template("public/jinja.html", my_name=my_name, age=age,
     langs=langs, friends=friends, colors=colors, cool=cool,

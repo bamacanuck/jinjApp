@@ -1,1 +1,3 @@
-Nash-Flask-video6, 11 min 15 sec
+Nash-Flask-video6
+
+restart jinja examples from for lang in langs

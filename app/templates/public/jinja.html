@@ -19,9 +19,9 @@
 
             <h4>looping</h4>
 
-            {% for x in langs %}
+            {% for lang in langs %}
                 <ul>
-                    {{ x }}
+                    {{ lang }}
                 </ul>
             {% endfor %}
 
@@ -29,9 +29,9 @@
 
             <h4>looping with index</h4>
 
-            {% for x in langs %}
+            {% for lang in langs %}
                 <ul>
-                    {{ loop.index }} : {{ x }}
+                    {{ loop.index }} : {{ lang }}
                 </ul>
             {% endfor %}
 
@@ -60,6 +60,7 @@
             <h4>looping with a dict - values</h4>
 
             {% for v in friends.values() %}
+                
                 <ul>
                     {{ v }}
                 </ul>
@@ -82,6 +83,12 @@
             <h4>access class attributes</h4>
 
             {{ my_remote.url }}
+
+            <hr>
+
+            <h4>unpack variables</h4>
+
+            {{ langs[0] }}
 
             <hr>
 

@@ -9,12 +9,16 @@ def index():
 @app.route("/jinja")
 def jinja():
 
+    # strings
     my_name = "SRS"
 
+    # integers
     age = 42
 
+    #lists
     langs = ["Python", "JavaScript", "Bash", "C", "Ruby"]
 
+    # dictionaries
     friends = {
         "Tom": 30,
         "Amy": 60,
@@ -22,10 +26,13 @@ def jinja():
         "Clarissa": 23
     }
 
+    # tuples
     colors = ("red", "green")
 
+    # booleans
     cool = True
 
+    # classes
     class GitRemote:
         def __init__(self, name, desc, url):
             self.name = name
@@ -44,6 +51,7 @@ def jinja():
         url="https://github.com/bamacanuck/jinjApp.git"
     )
 
+    # functions
     def repeat(x, qty):
         return x * qty
 

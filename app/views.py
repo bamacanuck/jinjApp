@@ -27,17 +27,18 @@ def jinja():
     }
 
     # tuples
-    colors = ("red", "green")
+    colors = ("red", "green", "orange", "blue", "ultimateColor")
 
     # booleans
     cool = True
 
     # classes
     class GitRemote:
-        def __init__(self, name, desc, url):
+        def __init__(self, name, desc, url, other):
             self.name = name
             self.desc = desc
             self.url = url
+            self.other = other
 
         def pull(self):
             return f"pulling repo {self.name}"
@@ -48,7 +49,8 @@ def jinja():
     my_remote = GitRemote (
         name="Flask Jinja",
         desc="template design tutorial",
-        url="https://github.com/bamacanuck/jinjApp.git"
+        url="https://github.com/bamacanuck/jinjApp.git",
+        other="otherVariable"
     )
 
     # functions

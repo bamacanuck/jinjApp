@@ -86,11 +86,44 @@
 
             <hr>
 
-            <h4>unpack variables</h4>
+            <h4>"unpack" with new variables (a tuple, in this case)</h4>
 
-            {{ langs[0] }}
+            {% set a, b, c, d, e = colors %}
 
+            <p>{{ a }}</p>
+
+            <p>{{ b }}</p>
+
+            <p>{{ c }}</p>
+
+            <p>{{ d }}</p>
+
+            <p>{{ e }}</p>
+
+            <h4>give new name to a tuple, loop, and select</h4>
+
+            {% set foof = colors %}
+
+            <p>{{ foof }}</p>
+
+            {% for col in foof %}
+
+                {% if loop.index == 3 %}
+
+                <ul>
+                    <p> {{ loop.index }} : {{ col }}</p>
+                </ul>
+
+                {% endif %}
+
+            {% endfor %}
             <hr>
+
+            <h4>conditional if</h4>
+
+            
+
+            
 
         </div>
     </div>

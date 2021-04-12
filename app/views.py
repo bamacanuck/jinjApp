@@ -57,6 +57,8 @@ def jinja():
         other="otherVariable"
     )
 
+    suspect = "<script>alert('HACKED')</script>"
+
     # functions
     def repeat(x, qty):
         return x * qty
@@ -88,7 +90,7 @@ def jinja():
     
     return render_template("public/jinja.html", my_name=my_name, my_age=my_age,
     langs=langs, friends=friends, colors=colors, cool=cool,
-    GitRemote=GitRemote, my_remote=my_remote, repeat=repeat, my_html=my_html)
+    GitRemote=GitRemote, my_remote=my_remote, repeat=repeat, my_html=my_html, suspect=suspect)
 
 @app.route("/x")
 def redX():

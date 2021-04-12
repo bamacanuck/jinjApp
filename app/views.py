@@ -32,6 +32,10 @@ def jinja():
     # booleans
     cool = True
 
+    # sample html bit, for escaping demo
+
+    my_html = "<h1>SOME HTML</h1>"
+
     # classes
     class GitRemote:
         def __init__(self, name, desc, url, other):
@@ -84,7 +88,7 @@ def jinja():
     
     return render_template("public/jinja.html", my_name=my_name, my_age=my_age,
     langs=langs, friends=friends, colors=colors, cool=cool,
-    GitRemote=GitRemote, my_remote=my_remote, repeat=repeat)
+    GitRemote=GitRemote, my_remote=my_remote, repeat=repeat, my_html=my_html)
 
 @app.route("/x")
 def redX():

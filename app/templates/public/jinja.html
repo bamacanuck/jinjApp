@@ -199,6 +199,20 @@
 
             <p>langs: {{ langs|join(", ") }}</p>
 
+            <!-- <hr> -->
+
+            <hr>
+
+            <h4>escaping - browser/data security measure</h4>
+
+            <p>automatically 'escaped': {{ my_html }}</p>
+
+            <p>with safe filter, allowing html tags to work: {{ my_html|safe }}</p>
+
+            <hr>
+
+            <h4></h4>
+
             
 
         </div>

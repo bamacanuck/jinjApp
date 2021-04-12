@@ -223,14 +223,20 @@
 
             <h4>macros</h4>
 
-            {% macro input_macro(label="", type="text", name="", id="", placeholder="") -%}
-
+            {% macro input_mac(label="", type="text", name="", id="", placeholder="") -%}
             <div class="form-group">
                 <label> {{ label }}</label>
-                <input type= "{{ type }}", name= "{{ name }}", id= "{{ id }}", placeholder= "{{ placeholder }}" >
+                <input class="form-control" type= "{{ type }}", name= "{{ name }}", id= "{{ id }}", placeholder= "{{ placeholder }}" >
             </div>
-
             {%- endmacro %}
+
+            {{ input_mac(label="your name:", name="form_name", id="form_name", placeholder="please enter your name") }}
+
+            {{ input_mac(label="age:", type="number", name="form_age", id="form_age", placeholder="... your age") }}
+
+            {{ input_mac(label="preferred callsign:", name="form_cs", id="form_cs", placeholder="... and your preferred callsign") }}
+            
+            {{ input_mac(label="password:", type="password", name="password", id="password", placeholder="your password") }}
             
 
         </div>

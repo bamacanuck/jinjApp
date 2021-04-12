@@ -10,7 +10,7 @@ def index():
 def jinja():
 
     # strings
-    my_name = "SRS"
+    my_name = "Shane R Scott"
 
     # integers
     my_age = 42

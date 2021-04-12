@@ -1,244 +1,258 @@
 {% extends "public/templates/public_templates.html" %}
 
-{% block title %}jinja templating{% endblock %}
-
-{% block main %}
+{% block title %}jinja templating{% endblock %} {% block main %}
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>jinja</h1>
-            <hr>
+  <div class="row">
+    <div class="col">
+      <h1>jinja</h1>
+      <hr />
 
-            <h3>variables</h3>
-            <hr>
+      <h3>variables</h3>
+      <hr />
 
-            name: {{ my_name }}
+      name: {{ my_name }}
 
-            <hr>
+      <hr />
 
-            <h4>looping</h4>
+      <h4>looping</h4>
 
-            {% for lang in langs %}
-                <ul>
-                    {{ lang }}
-                </ul>
-            {% endfor %}
+      {% for lang in langs %}
+      <ul>
+        {{ lang }}
+      </ul>
+      {% endfor %}
 
-            <hr>
+      <hr />
 
-            <h4>looping with index</h4>
+      <h4>looping with index</h4>
 
-            {% for lang in langs %}
-                <ul>
-                    {{ loop.index }} : {{ lang }}
-                </ul>
-            {% endfor %}
+      {% for lang in langs %}
+      <ul>
+        {{ loop.index }} : {{ lang }}
+      </ul>
+      {% endfor %}
 
-            <hr>
+      <hr />
 
-            <h4>looping with a dict</h4>
+      <h4>looping with a dict</h4>
 
-            {% for k, v in friends.items() %}
-                <ul>
-                    {{ k }} : {{ v }}
-                </ul>
-            {% endfor %}
+      {% for k, v in friends.items() %}
+      <ul>
+        {{ k }} : {{ v }}
+      </ul>
+      {% endfor %}
 
-            <hr>
+      <hr />
 
-            <h4>looping with a dict - keys</h4>
+      <h4>looping with a dict - keys</h4>
 
-            {% for k in friends.keys() %}
-                <ul>
-                    {{ k }}
-                </ul>
-            {% endfor %}
+      {% for k in friends.keys() %}
+      <ul>
+        {{ k }}
+      </ul>
+      {% endfor %}
 
-            <hr>
+      <hr />
 
-            <h4>looping with a dict - values</h4>
+      <h4>looping with a dict - values</h4>
 
-            {% for v in friends.values() %}
-                
-                <ul>
-                    {{ v }}
-                </ul>
-            {% endfor %}
+      {% for v in friends.values() %}
 
-            <hr>
+      <ul>
+        {{ v }}
+      </ul>
+      {% endfor %}
 
-            <h4>access list member</h4>
+      <hr />
 
-            {{ langs[0] }}
+      <h4>access list member</h4>
 
-            <hr>
+      {{ langs[0] }}
 
-            <h4>access dict member</h4>
+      <hr />
 
-            {{ friends["Tom"] }}
+      <h4>access dict member</h4>
 
-            <hr>
+      {{ friends["Tom"] }}
 
-            <h4>access class attributes</h4>
+      <hr />
 
-            {{ my_remote.url }}
+      <h4>access class attributes</h4>
 
-            <hr>
+      {{ my_remote.url }}
 
-            <h4>"unpack" with new variables (a tuple, in this case)</h4>
+      <hr />
 
-            {% set a, b, c, d, e = colors %}
+      <h4>"unpack" with new variables (a tuple, in this case)</h4>
 
-            <p>{{ a }}</p>
+      {% set a, b, c, d, e = colors %}
 
-            <p>{{ b }}</p>
+      <p>{{ a }}</p>
 
-            <p>{{ c }}</p>
+      <p>{{ b }}</p>
 
-            <p>{{ d }}</p>
+      <p>{{ c }}</p>
 
-            <p>{{ e }}</p>
+      <p>{{ d }}</p>
 
-            <hr>
+      <p>{{ e }}</p>
 
-            <h4>carry on with "unpacked" variable (?)</h4>
+      <hr />
 
-            <p>{{ c }}</p>
+      <h4>carry on with "unpacked" variable (?)</h4>
 
-            <hr>
+      <p>{{ c }}</p>
 
-            <h4>give new name to a tuple, loop, and select</h4>
+      <hr />
 
-            {% set foof = colors %}
+      <h4>give new name to a tuple, loop, and select</h4>
 
-            <p>{{ foof }}</p>
+      {% set foof = colors %}
 
-            {% for col in foof %}
+      <p>{{ foof }}</p>
 
-                {% if loop.index == 3 %}
+      {% for col in foof %} {% if loop.index == 3 %}
 
-                <ul>
-                    <p> {{ loop.index }} : {{ col }}</p>
-                </ul>
+      <ul>
+        <p>{{ loop.index }} : {{ col }}</p>
+      </ul>
 
-                {% endif %}
+      {% endif %} {% endfor %}
+      <hr />
 
-            {% endfor %}
-            <hr>
+      <h4>conditional if</h4>
 
-            <h4>conditional if</h4>
+      {% if cool %}
 
-            {% if cool %}
+      <p>cool = {{ cool }}</p>
 
-                <p>cool = {{ cool }}</p>
+      {% endif %}
 
-            {% endif %}
+      <hr />
 
-            <hr>
+      <h4>conditional if, elif, else</h4>
 
-            <h4>conditional if, elif, else</h4>
+      {% if my_age < 18 %}
+      <p>no entry for you... too young</p>
+      {% elif my_age > 55 %}
+      <p>no entry for you... too old</p>
+      {% else %}
+      <p>come on in...</p>
+      {% endif %}
 
-            {% if my_age < 18 %}
-                <p>no entry for you... too young</p>
-            {% elif my_age > 55 %}
-                <p>no entry for you... too old</p>
-            {% else %}
-                <p>come on in...</p>                
-            {% endif %}
+      <hr />
 
-            <hr>
+      <h4>call a function</h4>
 
-            <h4>call a function</h4>
+      <p>{{ repeat("Get that pizza! ", 4 ) }}</p>
 
-            <p>{{ repeat("Get that pizza! ", 4 ) }}</p>
+      <hr />
 
-            <hr>
+      <h4>call a class method</h4>
 
-            <h4>call a class method</h4>
+      <p>{{ my_remote.clone() }}</p>
 
-            <p>{{ my_remote.clone() }}</p>
+      <h4>still carry on with "unpacked" variables (?)</h4>
 
-            <h4>still carry on with "unpacked" variables (?)</h4>
+      <p>{{ b }}</p>
 
-            <p>{{ b }}</p>
+      <hr />
 
-            <hr>
+      <h4>and/or/not stuff</h4>
 
-            <h4>and/or/not stuff</h4>
+      <p>not {{cool}}</p>
 
-            <p>not {{cool}}</p>
+      <p>{{ not cool }}</p>
 
-            <p>{{ not cool }}</p>
+      <p>{{cool and cool}}</p>
 
-            <p>{{cool and cool}}</p>
+      <p>{{cool or cool}}</p>
 
-            <p>{{cool or cool}}</p>
+      <hr />
 
-            <hr>
+      <h4>math operators</h4>
 
-            <h4>math operators</h4>
+      <p>my age / 2 = {{ my_age / 2 }}</p>
 
-            <p>my age / 2 = {{ my_age / 2 }}</p>
+      <p>my age + 2 = {{ my_age + 2 }}</p>
 
-            <p>my age + 2 = {{ my_age + 2 }}</p>
+      <p>my age = {{ my_age }}</p>
 
-            <p>my age = {{ my_age }}</p>
+      <hr />
 
-            <hr>
+      <h4>Jinja filters</h4>
 
-            <h4>Jinja filters</h4>
+      <p>length of langs list: {{ langs|length }}</p>
 
-            <p>length of langs list: {{ langs|length }}</p>
+      <p>length of friends dict: {{ friends|length }}</p>
 
-            <p>length of friends dict: {{ friends|length }}</p>
+      <p>reverse my name: {{ my_name|reverse }}</p>
 
-            <p>reverse my name: {{ my_name|reverse }}</p>
+      <h4>Jinja filters - join</h4>
 
-            <h4>Jinja filters - join</h4>
+      <p>langs: {{ langs|join(", ") }}</p>
 
-            <p>langs: {{ langs|join(", ") }}</p>
+      <!-- <hr> -->
 
-            <!-- <hr> -->
+      <hr />
 
-            <hr>
+      <h4>escaping - browser/data security measure</h4>
 
-            <h4>escaping - browser/data security measure</h4>
+      <p>automatically 'escaped': {{ my_html }}</p>
 
-            <p>automatically 'escaped': {{ my_html }}</p>
+      <p>with safe filter, allowing html tags to work: {{ my_html|safe }}</p>
 
-            <p>with safe filter, allowing html tags to work: {{ my_html|safe }}</p>
+      <hr />
 
-            <hr>
+      <h4>using safe filter badly/dangerously (don't do this)</h4>
 
-            <h4>using safe filter badly/dangerously (don't do this)</h4>
+      <!-- <p>{{ suspect | safe }}</p> -->
 
-            <!-- <p>{{ suspect | safe }}</p> -->
+      <p>
+        alerts "HACKED" - because variable with script was given safe filter
+      </p>
 
-            <p> alerts "HACKED" - because variable with script was given safe filter</p>
+      <p>
+        ... script now disabled, because continuing with it would be annoying
+      </p>
 
-            <p> ... script now disabled, because continuing with it would be annoying </p>
+      <hr />
 
-            <hr>
+      <h4>macros</h4>
 
-            <h4>macros</h4>
+      {% macro input_mac(label="", type="text", name="", id="", placeholder="")
+      -%}
+      <div class="form-group">
+        <label> {{ label }}</label>
+        <input
+          class="form-control"
+          type="{{ type }}"
+          ,
+          name="{{ name }}"
+          ,
+          id="{{ id }}"
+          ,
+          placeholder="{{ placeholder }}"
+        />
+      </div>
+      {%- endmacro %}
+      
+      {{ input_mac(label="your name:", name="form_name", id="form_name",
+      placeholder="please enter your name") }}
+      
+      {{ input_mac(label="age:", type="number", name="form_age", id="form_age",
+      placeholder="... your age") }}
+      
+      {{ input_mac(label="preferred callsign:", name="form_cs", id="form_cs",
+      placeholder="... your preferred callsign") }}
+      
+      {{ input_mac(label="password:", type="password", name="password", id="password", placeholder="... and your password") }}
 
-            <!-- input_mac macro from separate macros file -->
+      <hr />
 
-            {{ input_mac(label="your name:", name="form_name", id="form_name", placeholder="please enter your name") }}
-
-            {{ input_mac(label="age:", type="number", name="form_age", id="form_age", placeholder="... your age") }}
-
-            {{ input_mac(label="preferred callsign:", name="form_cs", id="form_cs", placeholder="... and your preferred callsign") }}
-            
-            {{ input_mac(label="password:", type="password", name="password", id="password", placeholder="your password") }}
-
-            <hr>
-
-            <h4></h4>
-            
-
-        </div>
+      <h4></h4>
     </div>
+  </div>
 </div>
 {% endblock %}

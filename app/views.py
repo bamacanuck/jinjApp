@@ -13,7 +13,7 @@ def jinja():
     my_name = "SRS"
 
     # integers
-    age = 42
+    my_age = 42
 
     #lists
     langs = ["Python", "JavaScript", "Bash", "C", "Ruby"]
@@ -82,7 +82,7 @@ def jinja():
     # }
 
     
-    return render_template("public/jinja.html", my_name=my_name, age=age,
+    return render_template("public/jinja.html", my_name=my_name, my_age=my_age,
     langs=langs, friends=friends, colors=colors, cool=cool,
     GitRemote=GitRemote, my_remote=my_remote, repeat=repeat)
 

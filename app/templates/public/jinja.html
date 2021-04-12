@@ -100,6 +100,14 @@
 
             <p>{{ e }}</p>
 
+            <hr>
+
+            <h4>carry on with "unpacked" variable (?)</h4>
+
+            <p>{{ c }}</p>
+
+            <hr>
+
             <h4>give new name to a tuple, loop, and select</h4>
 
             {% set foof = colors %}
@@ -121,7 +129,55 @@
 
             <h4>conditional if</h4>
 
-            
+            {% if cool %}
+
+                <p>cool = {{ cool }}</p>
+
+            {% endif %}
+
+            <hr>
+
+            <h4>conditional if, elif, else</h4>
+
+            {% if my_age < 18 %}
+                <p>no entry for you... too young</p>
+            {% elif my_age > 55 %}
+                <p>no entry for you... too old</p>
+            {% else %}
+                <p>come on in...</p>                
+            {% endif %}
+
+            <hr>
+
+            <h4>call a function</h4>
+
+            <p>{{ repeat("Get that pizza! ", 4 ) }}</p>
+
+            <hr>
+
+            <h4>call a class method</h4>
+
+            <p>{{ my_remote.clone() }}</p>
+
+            <h4>still carry on with "unpacked" variables (?)</h4>
+
+            <p>{{ b }}</p>
+
+            <hr>
+
+            <h4>and/or/not stuff</h4>
+
+            <p>not {{cool}}</p>
+
+            <p>{{ not cool }}</p>
+
+            <p>{{cool and cool}}</p>
+
+            <p>{{cool or cool}}</p>
+
+            <hr>
+
+            <h4></h4>
 
             
 
